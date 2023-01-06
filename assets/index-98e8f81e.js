@@ -218,7 +218,7 @@ animation: 1.3s 1 alternate SlideP;
  transform: translate(0px,${e=>e.transform}px);
 `,Fm=le.section`
  width: 100%;
- height: 1000px;
+ height: 700px;
  display:flex;
  justify-content: center;
  align-items: center;
@@ -229,12 +229,12 @@ animation: 1.3s 1 alternate SlideP;
  justify-content: space-between;
  align-items: center;
 
-`,Qf="/MyPortfolio/assets/iPhone11-734eb8ea.png",Yf="/MyPortfolio/assets/iphone22-94ec3a92.png",Gf="/MyPortfolio/assets/Pad-b8fede2a.png",Bm=()=>{const e=ae.useRef();Wf(e,{rootMargin:"10px"},0);const t=es(5e3);return et(Fm,{ref:e,children:[et(Um,{children:[B(Zo,{src:Qf,transform:(t*2).toString(),width:"160px",loading:"lazy",alt:"mockUb"}),B(Zo,{src:Yf,transform:(t*2.5).toString(),width:"185px",loading:"lazy",alt:"mockUb"})]}),B(Zo,{src:Gf,transform:(t*3).toString(),width:"340px",loading:"lazy",alt:"mockUb"})]})},Jo=le.img`
+`,Qf="/MyPortfolio/assets/iPhone11-734eb8ea.png",Yf="/MyPortfolio/assets/iphone22-94ec3a92.png",Gf="/MyPortfolio/assets/Pad-b8fede2a.png",Bm=()=>{const e=ae.useRef();Wf(e,{rootMargin:"10px"},0);const t=es(2e3);return et(Fm,{ref:e,children:[et(Um,{children:[B(Zo,{src:Qf,transform:(t*2).toString(),width:"160px",loading:"lazy",alt:"mockUb"}),B(Zo,{src:Yf,transform:(t*1.2).toString(),width:"185px",loading:"lazy",alt:"mockUb"})]}),B(Zo,{src:Gf,transform:t.toString(),width:"340px",loading:"lazy",alt:"mockUb"})]})},Jo=le.img`
  width: ${e=>e.width};
  transform: translate(0px,${e=>e.transform}px);
 `,Hm=le.section`
  width: 100%;
- height: 1000px;
+ height: 700px;
  display:flex;
  justify-content: center;
  align-items: center;
@@ -245,7 +245,7 @@ animation: 1.3s 1 alternate SlideP;
  justify-content: space-between;
  align-items: center;
 
-`,Wm=()=>{const e=ae.useRef();Wf(e,{rootMargin:"0px"},1);const t=es(1e4);return et(Hm,{ref:e,children:[et(Vm,{children:[B(Jo,{src:Qf,transform:(t*2).toString(),width:"160px",loading:"lazy",alt:"mockUb"}),B(Jo,{src:Yf,transform:(t*2.5).toString(),width:"185px",loading:"lazy",alt:"mockUb"})]}),B(Jo,{src:Gf,transform:(t*3).toString(),width:"340px",loading:"lazy",alt:"mockUb"})]})},Qm=le.section`
+`,Wm=()=>{const e=ae.useRef();Wf(e,{rootMargin:"0px"},1);const t=es(4e3);return et(Hm,{ref:e,children:[et(Vm,{children:[B(Jo,{src:Qf,transform:(t*2).toString(),width:"160px",loading:"lazy",alt:"mockUb"}),B(Jo,{src:Yf,transform:(t*1.2).toString(),width:"185px",loading:"lazy",alt:"mockUb"})]}),B(Jo,{src:Gf,transform:t.toString(),width:"340px",loading:"lazy",alt:"mockUb"})]})},Qm=le.section`
  width: 95%;
  height: 4000px;
  justify-content: space-around;
