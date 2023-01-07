@@ -212,7 +212,7 @@ animation: 1.3s 1 alternate SlideP;
  flex-direction: column;
  position:fixed;
  top: 0;
- z-index: 10; 
+ z-index: -1; 
 `,Fm=()=>{const{ProjectIndex:e,IsPageActive:t}=b.useContext(wo);return B(Dm,{display:t?"flex":"none",children:B(jm,{projectIndex:`0${(e+1).toString()}`,header:Zo[e].Name,Skills:Zo[e].platform,description:Zo[e].description})})},Hf=(e,t,n)=>{const{rootMargin:r}=t,[l,o]=b.useState(null),{setProjectIndex:i,setIsPageActive:u}=b.useContext(wo);return b.useEffect(()=>{if(!(e!=null&&e.current))return;new IntersectionObserver(([c])=>{o(c),c.isIntersecting&&(i(n),u(!0)),c.isIntersecting||u(!1)},{rootMargin:r}).observe(e.current)},[e,r]),l},Jo=oe.img`
  width: ${e=>e.width};
  transform: translate(0px,${e=>e.transform}px);
