@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react"
 import { Description } from "../../../components/common/Description"
-import { useScrollValue } from "../../../services/useScrollValue"
+import { useScrollValueWithLimit } from "../../../services/useScrollValueWithLimit"
 import { AnimationLabel } from "./AnimationLabel"
 import { Wrapper } from "./Wrapper"
 
 
 export const AboutMe = () => {
 
-    const scrollCounter = useScrollValue(800)
+    const scrollCounter = useScrollValueWithLimit(-1, 800)
 
     return (
         <Wrapper>

@@ -1,15 +1,13 @@
-import { useContext, useEffect, useState } from 'react'
-import { Context } from '../Context/ProjectsApi';
+import { useEffect, useState } from 'react'
 
-export const useScrollValue = (Index: number) => {
+export const useScrollValueWithLimit = (start: number, limit: number) => {
 
     const [scrollPosition, setScrollPosition] = useState(0);
     const [scrollCounter, setScrollCounter] = useState(0);
-    const { ProjectIndex, IsPageActive } = useContext(Context)
 
     const handleScroll = () => {
         const position = window.scrollY;
-        if ((IsPageActive && ProjectIndex == Index)) {
+        if ((position < limit && position >= start)) {
             setScrollPosition(position);
             if (position > scrollPosition) setScrollCounter(scrollCounter + 1)
             if (position < scrollPosition) setScrollCounter(scrollCounter - 1)
@@ -21,6 +19,6 @@ export const useScrollValue = (Index: number) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [scrollPosition, IsPageActive]);
+    }, [scrollPosition]);
     return scrollCounter
 }

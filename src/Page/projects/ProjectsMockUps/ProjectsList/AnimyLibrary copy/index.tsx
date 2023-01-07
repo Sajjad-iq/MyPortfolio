@@ -12,16 +12,16 @@ export const AnimeLibraryCopy = () => {
 
     const Ref = useRef<any>()
     useObserver(Ref, { rootMargin: "0px" }, 1);
-    const scrollCounter = useScrollValue(10000)
+    const scrollCounter = useScrollValue(1)
 
 
     return (
         <ProjectWrapper ref={Ref}>
             <Row>
-                <TransformIMG src={MockUpPhone} transform={(scrollCounter * 2).toString()} width='160px' loading='lazy' alt='mockUb' />
-                <TransformIMG src={MockUpPhone2} transform={(scrollCounter * 2.5).toString()} width='185px' loading='lazy' alt='mockUb' />
+                <TransformIMG src={MockUpPhone} transform={(scrollCounter * -2).toString()} width='160px' loading='lazy' alt='mockUb' />
+                <TransformIMG src={MockUpPhone2} transform={(scrollCounter * -1.5).toString()} width='185px' loading='lazy' alt='mockUb' />
             </Row>
-            <TransformIMG src={MockUpIpad} transform={(scrollCounter * 3).toString()} width='340px' loading='lazy' alt='mockUb' />
+            <TransformIMG src={MockUpIpad} transform={(scrollCounter * -0.5).toString()} width='340px' loading='lazy' alt='mockUb' />
         </ProjectWrapper>
     )
 }
