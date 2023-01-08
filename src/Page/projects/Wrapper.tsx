@@ -8,5 +8,5 @@ export const Wrapper = styled.section`
  align-items: center;
  flex-direction: column;
  position: relative;
-
+ z-index:20;
 `

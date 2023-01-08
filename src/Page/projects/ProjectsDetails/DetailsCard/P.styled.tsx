@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const P = styled.p`
+
 font-size:1rem ;
 font-weight:500 ;
-color:black ;
+color: black;
 animation: 1.3s 1 alternate SlideP;
 
  @keyframes SlideP {
