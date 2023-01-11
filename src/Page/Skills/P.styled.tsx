@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const P = styled.p`
 
-font-size:1.5rem ;
+font-size:1rem ;
 font-weight:700 ;
 color: black;
 text-align: center;
-margin:5px 0;
+padding:5px;
+text-align: start;
+white-space: nowrap;
 
 `

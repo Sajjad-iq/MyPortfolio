@@ -23,23 +23,23 @@ export const Skills = () => {
         <Wrapper ref={ref}>
             <AnimationLabel transform={(scrollCounter * 3).toString()}>Skills</AnimationLabel>
             <Column>
-                <Row />
                 <P>Html</P>
                 <P>Css</P>
                 <P>JavaScript</P>
-                <P>TypeScript</P>
-                <P>Sass</P>
-                <Row />
+
             </Column>
 
             <Column>
-                <Row />
+                <P>TypeScript</P>
+                <P>Sass</P>
                 <P>React</P>
+            </Column>
+
+            <Column>
                 <P>Redux</P>
                 <P>Web Performance</P>
                 <P>Web Security</P>
                 <P>Responsive Web Design</P>
-                <Row />
             </Column>
 
         </Wrapper>
