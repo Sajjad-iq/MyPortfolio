@@ -12,18 +12,17 @@ export const useObserver = (ref: any, options: any, ProjectIndex: number) => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setObserverEntry(entry);
-                if (entry.isIntersecting) {
-                    setProjectIndex(ProjectIndex)
-                    setIsPageActive(true)
-                } if (!entry.isIntersecting) {
-                    setIsPageActive(false)
-                }
-
+                setProjectIndex(ProjectIndex)
+                setIsPageActive(entry.isIntersecting)
             },
             { rootMargin }
         );
 
         observer.observe(ref.current);
+
+        return () => {
+            if (ref?.current) observer.unobserve(ref.current)
+        }
     }, [ref, rootMargin]);
 
     return observerEntry;

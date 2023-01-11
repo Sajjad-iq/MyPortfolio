@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useObserver } from '../../../../../services/useObserver'
 import MockUpPhone from '../../../../../assets/ProjectsMockUps/animeLibrary/iPhone11.png'
 import MockUpPhone2 from '../../../../../assets/ProjectsMockUps/animeLibrary/iphone22.png'
@@ -11,19 +11,26 @@ import { stockData } from '../../../stockData'
 
 export const AnimeLibrary = () => {
 
-    const index = 0
+    const index = 1
     const Ref = useRef<any>()
-    useObserver(Ref, { rootMargin: "0px" }, index);
-    const scrollCounter = useScrollValue(index)
+    const observe = useObserver(Ref, { rootMargin: "0px" }, index);
+    let { scrollCounter, setScrollCounter } = useScrollValue(index)
 
+    useEffect(() => {
+        if (Ref?.current && observe !== null) {
+            if (observe.isIntersecting === false) setScrollCounter(0)
+        }
+    }, [observe])
 
     return (
         <ProjectWrapper ref={Ref}>
             <Row>
-                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone} transform={(scrollCounter * -2).toString()} width='160px' loading='lazy' alt='mockUb' /></a>
-                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone2} transform={(scrollCounter * -1.5).toString()} width='185px' loading='lazy' alt='mockUb' /></a>
+                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone} transform={(scrollCounter * -13).toString()} width='130px' loading='lazy' alt='mockUb' /></a>
+                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone2} transform={(scrollCounter * -7).toString()} width='185px' loading='lazy' alt='mockUb' /></a>
             </Row>
-            <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpIpad} transform={(scrollCounter * -0.5).toString()} width='340px' loading='lazy' alt='mockUb' /></a>
+            <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpIpad} transform={(scrollCounter * -3).toString()} width='340px' loading='lazy' alt='mockUb' /></a>
         </ProjectWrapper>
     )
 }
+
+

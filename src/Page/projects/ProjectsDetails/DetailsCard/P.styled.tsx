@@ -5,7 +5,7 @@ export const P = styled.p`
 font-size:1rem ;
 font-weight:500 ;
 color: black;
-animation: 1.3s 1 alternate SlideP;
+animation: 0.7s 1 alternate SlideP;
 
  @keyframes SlideP {
   0% {

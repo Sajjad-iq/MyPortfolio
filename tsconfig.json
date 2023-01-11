@@ -22,7 +22,8 @@
   },
   "include": [
     "src",
-    "src/components/common/desribtion.tsx"
+    "src/components/common/desribtion.tsx",
+    "src/Page/Skills/.tsx"
   ],
   "references": [
     {

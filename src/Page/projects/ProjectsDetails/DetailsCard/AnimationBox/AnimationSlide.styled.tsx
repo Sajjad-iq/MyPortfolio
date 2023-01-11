@@ -6,7 +6,7 @@ height: 100%;
  position:absolute;
  top: 0;
  z-index: 10;
- animation: 1.6s 1 alternate Sli;
+ animation: 1s 1 alternate Sli;
 
  @keyframes Sli {
   0% {

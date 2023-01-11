@@ -6,7 +6,7 @@ export const H1 = styled.h1<Props>`
 font-size:${p => p.fontSize} ;
 font-weight:900 ;
 color:black ;
-animation: 1.3s 1 alternate SlideH;
+animation: 0.7s 1 alternate SlideH;
 
  @keyframes SlideH {
   0% {

@@ -7,6 +7,7 @@ export const useScrollValue = (Index: number) => {
     const [scrollCounter, setScrollCounter] = useState(0);
     const { ProjectIndex, IsPageActive } = useContext(Context)
 
+
     const handleScroll = () => {
         const position = window.scrollY;
         if ((IsPageActive && ProjectIndex == Index)) {
@@ -22,5 +23,5 @@ export const useScrollValue = (Index: number) => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [scrollPosition, IsPageActive]);
-    return scrollCounter
+    return { scrollCounter, setScrollCounter }
 }

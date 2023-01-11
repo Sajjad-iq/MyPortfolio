@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react'
 
-export const useScrollValueWithLimit = (start: number, limit: number) => {
+export const useScrollValueForSlides = (start: number, limit: number) => {
 
     const [scrollPosition, setScrollPosition] = useState(0);
     const [scrollCounter, setScrollCounter] = useState(0);
 
     const handleScroll = () => {
         const position = window.scrollY;
-        if ((position < limit && position >= start)) {
-            setScrollPosition(position);
+        setScrollPosition(position);
+        if (scrollPosition < limit && scrollPosition > start) {
             if (position > scrollPosition) setScrollCounter(scrollCounter + 1)
             if (position < scrollPosition) setScrollCounter(scrollCounter - 1)
         }
+
     };
 
     useEffect(() => {
@@ -20,5 +21,5 @@ export const useScrollValueWithLimit = (start: number, limit: number) => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [scrollPosition]);
-    return scrollCounter
+    return { scrollCounter, setScrollCounter }
 }

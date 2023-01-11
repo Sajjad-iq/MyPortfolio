@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useObserver } from '../../../../../services/useObserver'
 import { TransformIMG } from '../../../../../components/common/IMG.styled'
 import { ProjectWrapper } from '../../../../../components/shared/ProjectWrapper'
@@ -10,19 +10,24 @@ import { useScrollValue } from '../../../../../services/useScrollValue'
 import { stockData } from '../../../stockData'
 
 export const UrlShorts = () => {
-    const index = 1
+    const index = 2
     const Ref = useRef<any>()
-    useObserver(Ref, { rootMargin: "0px" }, index);
-    const scrollCounter = useScrollValue(index)
+    const observe = useObserver(Ref, { rootMargin: "0px" }, index);
+    let { scrollCounter, setScrollCounter } = useScrollValue(index)
 
+    useEffect(() => {
+        if (Ref?.current && observe !== null) {
+            if (observe.isIntersecting === false) setScrollCounter(0)
+        }
+    }, [observe])
 
     return (
         <ProjectWrapper ref={Ref}>
             <Row>
-                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone} transform={(scrollCounter * -2).toString()} width='160px' loading='lazy' alt='mockUb' /></a>
-                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone2} transform={(scrollCounter * -1.5).toString()} width='185px' loading='lazy' alt='mockUb' /></a>
+                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone} transform={(scrollCounter * -13).toString()} width='165px' loading='lazy' alt='mockUb' /></a>
+                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone2} transform={(scrollCounter * -7).toString()} width='155px' loading='lazy' alt='mockUb' /></a>
             </Row>
-            <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpLab} transform={(scrollCounter * -0.5).toString()} width='340px' loading='lazy' alt='mockUb' /></a>
+            <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpLab} transform={(scrollCounter * -3).toString()} width='340px' loading='lazy' alt='mockUb' /></a>
         </ProjectWrapper>
     )
 }

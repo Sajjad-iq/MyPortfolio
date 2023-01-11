@@ -9,10 +9,10 @@ export const ProjectsMockUps = () => {
 
     return (
         <Wrapper>
+            <Space />
             <AnimeLibrary />
             <UrlShorts />
             <PaperRockGame />
-            <Space />
         </Wrapper>
     )
 }

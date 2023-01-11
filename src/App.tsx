@@ -2,6 +2,7 @@ import { AppWrapper } from "./AppWrapper"
 import ContextProvider from "./Context/ProjectsApi"
 import { Header } from "./Page/Header"
 import { Projects } from "./Page/projects"
+import { Skills } from "./Page/Skills"
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <ContextProvider>
         <Projects />
       </ContextProvider>
+      <Skills />
     </AppWrapper>
   )
 }
