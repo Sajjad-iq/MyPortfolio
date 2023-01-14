@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react'
 import { AnimationLabel } from '../../components/common/AnimationLabel'
-import { Row } from '../../components/shared/Row.styled'
 import { useObserverForSlides } from '../../services/useObserverForSlides'
 import { useScrollValueForSlides } from '../../services/useScrollValueForSlides'
 import { Column } from './Column'
@@ -11,7 +10,7 @@ export const Skills = () => {
 
     const ref = useRef<any>()
     const { scrollCounter, setScrollCounter } = useScrollValueForSlides(6000, 7000)
-    const observe = useObserverForSlides(ref, { rootMargin: "0px" });
+    const observe = useObserverForSlides(ref, { rootMargin: "0px" }, true);
 
     useEffect(() => {
         if (ref?.current && observe !== null) {

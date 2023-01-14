@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../assets/breackPoints";
 
 export const MyName = styled.h1`
  font-size: 3rem;
@@ -6,6 +7,9 @@ export const MyName = styled.h1`
  font-family: 'Yellowtail',cursive;
  animation: 1.7s 1 alternate ShowMyName;
 
+  @media ${device.tablet} {
+     font-size: 5.5rem;
+  }
 
  @keyframes ShowMyName {
   from {
@@ -14,5 +18,6 @@ export const MyName = styled.h1`
   to {
     transform: translate(0px, 0%);
   }
+
 }
 `

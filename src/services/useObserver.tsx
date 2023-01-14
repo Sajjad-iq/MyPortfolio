@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../Context/ProjectsApi";
 
-export const useObserver = (ref: any, options: any, ProjectIndex: number) => {
+export const useObserver = (ref: any, options: any, ProjectIndex: number, IsFirstOrLast: boolean) => {
 
     const { rootMargin } = options;
     const [observerEntry, setObserverEntry] = useState<any>(null);
@@ -12,8 +12,13 @@ export const useObserver = (ref: any, options: any, ProjectIndex: number) => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setObserverEntry(entry);
-                setProjectIndex(ProjectIndex)
-                setIsPageActive(entry.isIntersecting)
+                if (IsFirstOrLast && entry.isIntersecting) setProjectIndex(ProjectIndex)
+                else {
+                    if (entry.isIntersecting) {
+                        setProjectIndex(ProjectIndex)
+                        setIsPageActive(true)
+                    }
+                }
             },
             { rootMargin }
         );

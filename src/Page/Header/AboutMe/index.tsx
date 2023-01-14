@@ -9,7 +9,7 @@ import { useObserverForSlides } from "../../../services/useObserverForSlides"
 export const AboutMe = () => {
     const ref = useRef<any>()
     const { scrollCounter, setScrollCounter } = useScrollValueForSlides(0, 500)
-    const observe = useObserverForSlides(ref, { rootMargin: "0px" });
+    const observe = useObserverForSlides(ref, { rootMargin: "0px" }, false);
 
     useEffect(() => {
         if (ref?.current && observe !== null) {

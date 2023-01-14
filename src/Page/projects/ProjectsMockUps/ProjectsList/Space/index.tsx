@@ -8,12 +8,13 @@ import { TransformIMG } from '../../../../../components/common/IMG.styled'
 import { ProjectWrapper } from '../../../../../components/shared/ProjectWrapper'
 import { Row } from '../../../../../components/shared/Row.styled'
 import { stockData } from '../../../stockData'
+import { Section } from '../../../../../components/common/Section'
 
 export const Space = () => {
 
     const index = 0
     const Ref = useRef<any>()
-    const observe = useObserver(Ref, { rootMargin: "0px" }, index);
+    const observe = useObserver(Ref, { rootMargin: "0px" }, index, true);
     let { scrollCounter, setScrollCounter } = useScrollValue(index)
 
     useEffect(() => {
@@ -24,11 +25,13 @@ export const Space = () => {
 
     return (
         <ProjectWrapper ref={Ref}>
-            <Row>
-                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone} transform={(scrollCounter * -7).toString()} width='185px' loading='lazy' alt='mockUb' /></a>
-                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone2} transform={(scrollCounter * -13).toString()} width='160px' loading='lazy' alt='mockUb' /></a>
-            </Row>
-            <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPage} transform={(scrollCounter * -3).toString()} width='340px' loading='lazy' alt='mockUb' /></a>
+            <Section >
+                <Row>
+                    <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone} transform={(scrollCounter * -7).toString()} width='185px' loading='lazy' alt='mockUb' /></a>
+                    <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPhone2} transform={(scrollCounter * -13).toString()} width='160px' loading='lazy' alt='mockUb' /></a>
+                </Row>
+                <a href={stockData[index].url} target={"_blank"}><TransformIMG src={MockUpPage} transform={(scrollCounter * -3).toString()} width='340px' loading='lazy' alt='mockUb' /></a>
+            </Section>
         </ProjectWrapper>
     )
 }

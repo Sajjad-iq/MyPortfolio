@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../assets/breackPoints";
 interface Props {
     transform: string
 }
@@ -12,4 +13,7 @@ export const AnimationLabel = styled.p<Props>`
  left:-100px;
  opacity: 0.2;
  
+  @media ${device.tablet} {
+     font-size: 8rem;
+  }
 `

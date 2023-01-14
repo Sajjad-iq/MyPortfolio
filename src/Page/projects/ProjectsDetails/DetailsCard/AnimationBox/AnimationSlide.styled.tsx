@@ -22,6 +22,6 @@ height: 100%;
     transform: translate(120%,0%);
     width: 100%;
   }
- 
+   
 }
 `

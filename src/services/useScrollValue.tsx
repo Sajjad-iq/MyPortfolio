@@ -22,6 +22,6 @@ export const useScrollValue = (Index: number) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [scrollPosition, IsPageActive]);
+    }, [scrollPosition, IsPageActive, ProjectIndex]);
     return { scrollCounter, setScrollCounter }
 }

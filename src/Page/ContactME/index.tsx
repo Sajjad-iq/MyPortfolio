@@ -12,7 +12,7 @@ export const ContactMe = () => {
 
     const ref = useRef<any>()
     const { scrollCounter, setScrollCounter } = useScrollValueForSlides(7000, 8000)
-    const observe = useObserverForSlides(ref, { rootMargin: "0px" });
+    const observe = useObserverForSlides(ref, { rootMargin: "0px" }, true);
 
     useEffect(() => {
         if (ref?.current && observe !== null) {

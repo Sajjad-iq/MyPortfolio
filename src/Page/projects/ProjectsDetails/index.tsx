@@ -11,6 +11,7 @@ export const ProjectsDetails = () => {
     return (
         <Wrapper display={IsPageActive ? "flex" : "none"}>
             <DetailsCard
+                key={stockData[ProjectIndex].Name}
                 projectIndex={`0${(ProjectIndex + 1).toString()}`}
                 header={stockData[ProjectIndex].Name}
                 Skills={stockData[ProjectIndex].platform}

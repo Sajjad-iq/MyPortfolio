@@ -9,12 +9,13 @@ function App() {
 
   return (
     <AppWrapper>
-      <Header />
       <ContextProvider>
+        <Header />
         <Projects />
+        <Skills />
+        <ContactMe />
       </ContextProvider>
-      <Skills />
-      <ContactMe />
+
     </AppWrapper>
   )
 }
