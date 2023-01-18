@@ -281,7 +281,8 @@ flex-direction: column;
  display:flex;
  align-items: center;
  flex-direction: column;
- padding:650px 0;
+ padding-top:650px;
+ padding-bottom:350px;
  z-index:1;
 `,d0=()=>ce(f0,{children:[C(i0,{}),C(qm,{}),C(c0,{}),C(n0,{})]}),p0=b.section`
  width: 100%;
