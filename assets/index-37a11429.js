@@ -254,7 +254,7 @@ animation: 0.7s 1 alternate SlideP;
  
 `,zo=b.section`
  width: 100%;
- height: 800px;
+ height: 600px;
  display:flex;
  justify-content: flex-end;
  align-items: center;
@@ -281,7 +281,7 @@ flex-direction: column;
  display:flex;
  align-items: center;
  flex-direction: column;
- padding-top:200px;
+ padding:650px 0;
  z-index:1;
 `,d0=()=>ce(f0,{children:[C(i0,{}),C(qm,{}),C(c0,{}),C(n0,{})]}),p0=b.section`
  width: 100%;
