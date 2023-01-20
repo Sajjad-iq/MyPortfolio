@@ -1,23 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../Context/ProjectsApi";
 
-export const useObserver = (ref: any, options: any, ProjectIndex: number, IsFirstOrLast: boolean) => {
+export const useObserver = (ref: any, options: any, projectIndex: number) => {
 
     const { rootMargin } = options;
     const [observerEntry, setObserverEntry] = useState<any>(null);
-    const { setProjectIndex, setIsPageActive } = useContext(Context)
+    const { setProjectIndex, setIsPageActive, IsPageActive, ProjectIndex } = useContext(Context)
 
     useEffect(() => {
         if (!ref?.current) return;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setObserverEntry(entry);
-                if (IsFirstOrLast && entry.isIntersecting) setProjectIndex(ProjectIndex)
-                else {
-                    if (entry.isIntersecting) {
-                        setProjectIndex(ProjectIndex)
-                        setIsPageActive(true)
-                    }
+                if (entry.isIntersecting) {
+                    setProjectIndex(projectIndex)
+                    setIsPageActive(entry.isIntersecting)
                 }
             },
             { rootMargin }

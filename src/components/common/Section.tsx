@@ -1,7 +1,13 @@
 import styled from "styled-components";
-import { device } from "../../assets/breackPoints";
 
-export const Section = styled.section`
-   width: 100%;
 
+export const Section = styled.div.attrs<any>((props) => ({
+    style: {
+    }
+}))`
+width: 100%;
+display:flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 `

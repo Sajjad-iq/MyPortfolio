@@ -10,6 +10,13 @@ export const MyName = styled.h1`
   @media ${device.tablet} {
      font-size: 5.5rem;
   }
+  @media ${device.laptop} {
+     font-size: 4rem;
+  }
+  
+  @media ${device.desktop} {
+     font-size: 7rem;
+  }
 
  @keyframes ShowMyName {
   from {

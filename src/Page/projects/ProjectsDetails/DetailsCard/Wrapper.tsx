@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../../assets/breackPoints";
 
 
 export const Wrapper = styled.section`
@@ -9,4 +10,8 @@ export const Wrapper = styled.section`
  align-items: flex-start;
  flex-direction: column;
  padding:20px;
+
+  @media ${device.laptop} {
+     width: 50%;
+  }
 `

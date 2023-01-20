@@ -1,7 +1,7 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { AnimationLabel } from '../../components/common/AnimationLabel'
 import { useObserverForSlides } from '../../services/useObserverForSlides'
-import { useScrollValueForSlides } from '../../services/useScrollValueForSlides'
+import { useScrollValue } from '../../services/useScrollValue'
 import { Column } from './Column'
 import { P } from './P.styled'
 import { Wrapper } from './Wrapper'
@@ -9,23 +9,16 @@ import { Wrapper } from './Wrapper'
 export const Skills = () => {
 
     const ref = useRef<any>()
-    const { scrollCounter, setScrollCounter } = useScrollValueForSlides(6000, 7000)
-    const observe = useObserverForSlides(ref, { rootMargin: "0px" }, true);
-
-    useEffect(() => {
-        if (ref?.current && observe !== null) {
-            if (observe.isIntersecting === false) setScrollCounter(0)
-        }
-    }, [observe])
+    const observe = useObserverForSlides(ref, { rootMargin: "0px" });
+    const { scrollCounter } = useScrollValue(observe, true)
 
     return (
-        <Wrapper ref={ref}>
-            <AnimationLabel transform={(scrollCounter * 3).toString()}>Skills</AnimationLabel>
+        <Wrapper key={"Skills"} ref={ref}>
+            <AnimationLabel style={{ transform: `translate(${(scrollCounter * 3).toString()}px,0px)` }}>Skills</AnimationLabel>
             <Column>
                 <P>Html</P>
                 <P>Css</P>
                 <P>JavaScript</P>
-
             </Column>
 
             <Column>

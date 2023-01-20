@@ -10,4 +10,12 @@ export const Description = styled.p`
   @media ${device.tablet} {
      font-size: 1.8rem;
   }
+
+  @media ${device.laptop} {
+     font-size: 1.3rem;
+  }
+
+  @media ${device.desktop} {
+     font-size: 2.2rem;
+  }
 `

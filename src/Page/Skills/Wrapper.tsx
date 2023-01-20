@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../assets/breackPoints";
 
 export const Wrapper = styled.section`
  width: 100%;
@@ -9,4 +10,6 @@ export const Wrapper = styled.section`
  position: relative;
  flex-direction: column;
  margin:30px 0;
+
+ 
 `

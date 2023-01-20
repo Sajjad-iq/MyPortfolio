@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../assets/breackPoints";
 
 export const Wrapper = styled.section`
  width: 100%;
@@ -11,4 +12,8 @@ export const Wrapper = styled.section`
  flex-wrap: wrap;
  flex-direction: column;
  padding : 200px 0;
+
+ @media ${device.tablet} {
+ flex-direction: row;
+}
 `

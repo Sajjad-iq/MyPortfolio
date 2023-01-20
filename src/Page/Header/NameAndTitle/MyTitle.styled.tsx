@@ -10,6 +10,14 @@ export const MyTitle = styled.h1`
   @media ${device.tablet} {
      font-size: 2rem;
   }
+
+  @media ${device.laptop} {
+     font-size: 1.5rem;
+  }
+
+  @media ${device.desktop} {
+     font-size: 2.5rem;
+  }
   
  @keyframes ShowMyTitle {
   from {

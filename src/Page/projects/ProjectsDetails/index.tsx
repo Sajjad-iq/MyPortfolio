@@ -1,10 +1,11 @@
+import React from 'react'
 import { useContext } from 'react'
 import { Context } from '../../../Context/ProjectsApi'
 import { stockData } from '../stockData'
 import { DetailsCard } from './DetailsCard'
 import { Wrapper } from './Wrapper'
 
-export const ProjectsDetails = () => {
+export const ProjectsDetails = React.memo(() => {
 
     const { ProjectIndex, IsPageActive } = useContext(Context)
 
@@ -19,4 +20,4 @@ export const ProjectsDetails = () => {
             />
         </Wrapper>
     )
-}
+})
